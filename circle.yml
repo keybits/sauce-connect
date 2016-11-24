@@ -12,7 +12,7 @@ test:
     - python -m hello.hello_app:
         background: true
     # Wait for app to be ready
-    - curl --retry 10 --retry-delay 2 -v http://localhost:5000
+    - curl --retry 10 --retry-delay 2 -v http://localhost
     # Run selenium tests
     - nosetests --processes=8 --process-timeout=120
   post:

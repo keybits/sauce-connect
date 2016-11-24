@@ -57,7 +57,7 @@ class SauceSampleTest(unittest.TestCase):
         self.driver.implicitly_wait(30)
 
     def test_hello(self):
-        self.driver.get('http://www.google.com')
+        self.driver.get('http://localhost')
         assert 'Google' in self.driver.page_source
 
     def tearDown(self):
