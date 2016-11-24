@@ -9,10 +9,10 @@ test:
         background: true
     # Wait for tunnel to be ready
     - while [ ! -e ~/sauce_is_ready ]; do sleep 1; done
-    - sudo python -m hello.hello_app:
+    - python -m hello.hello_app:
         background: true
     # Wait for app to be ready
-    - curl --retry 10 --retry-delay 2 -v http://localhost
+    - curl --retry 10 --retry-delay 2 -v http://localhost:4000
     # Run selenium tests
     - nosetests --processes=8 --process-timeout=120
   post:
