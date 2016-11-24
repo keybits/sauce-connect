@@ -23,6 +23,14 @@ browsers = [{
     "platform": "OS X 10.11",
     "browserName": "chrome",
     "version": "54.0"
+}, {
+    "platform": "Windows 10",
+    "browserName": "internet explorer",
+    "version": "11"
+}, {
+    "platform": "OS X 10.11",
+    "browserName": "safari",
+    "version": "9.0"
 }]
 
 def on_platforms(platforms):
@@ -49,8 +57,8 @@ class SauceSampleTest(unittest.TestCase):
         self.driver.implicitly_wait(30)
 
     def test_hello(self):
-        self.driver.get('localhost:5000')
-        assert 'Hello' in self.driver.page_source
+        self.driver.get('http://www.google.com')
+        assert 'Google' in self.driver.page_source
 
     def tearDown(self):
         print("Link to your job: https://saucelabs.com/jobs/%s" % self.driver.session_id)
