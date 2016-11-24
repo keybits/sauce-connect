@@ -14,6 +14,6 @@ test:
     # Wait for app to be ready
     - curl --retry 10 --retry-delay 2 -v http://localhost:5000
     # Run selenium tests
-    - nosetests
+    - nosetests --processes=8 --process-timeout=120
   post:
     - killall --wait sc  # wait for Sauce Connect to close the tunnel
