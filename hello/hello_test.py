@@ -58,7 +58,7 @@ class SauceSampleTest(unittest.TestCase):
 
     def test_hello(self):
         self.driver.get('http://localhost:4000')
-        assert 'Google' in self.driver.page_source
+        assert 'Hello World' in self.driver.page_source
 
     def tearDown(self):
         print("Link to your job: https://saucelabs.com/jobs/%s" % self.driver.session_id)
