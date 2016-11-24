@@ -53,7 +53,7 @@ class SauceSampleTest(unittest.TestCase):
         self.driver.implicitly_wait(30)
 
     def test_hello(self):
-        self.driver.get('localhost:5000')
+        self.driver.get('127.0.0.1:5000')
         assert 'Hello' in self.driver.page_source
 
     def tearDown(self):
